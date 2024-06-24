@@ -1,0 +1,63 @@
+import React from "react";
+
+export default class Formu extends React.Component{
+    state={}
+    handleSumit= e =>{
+        e.preventDefault()
+        console.log(this.state)
+    }
+    handleChange = e =>{
+        this.setState({[e.target.name]:e.target.value})
+    }
+    render(){
+        return(
+            <div>
+                <form
+                onSubmit={this.handleSumit}
+                >
+                    <div>
+                        <input 
+                            type="text" 
+                            placeholder="nombre" 
+                            name="nombre"
+                            onChange={this.handleChange}
+                            value={this.state.nombre}
+                        />
+                    </div>
+                    <div>
+                        <input 
+                            type="text" 
+                            placeholder="descripcion" 
+                            name="descripcion"
+                            onChange={this.handleChange}
+                            value={this.state.descripcion}
+                        />
+                    </div>
+                    <div>
+                        <input 
+                            type="text" 
+                            placeholder="imagen" 
+                            name="img"
+                            onChange={this.handleChange}
+                            value={this.state.img}
+                        />
+                    </div>
+                    <div>
+                        <input 
+                            type="text" 
+                            placeholder="color" 
+                            name="color"
+                            onChange={this.handleChange}
+                            value={this.state.color}
+                        />
+                    </div>
+                    <button 
+                        type="submit" 
+                    >
+                        Submit
+                    </button>
+                </form>
+            </div>
+        )
+    }
+}
